@@ -163,6 +163,8 @@ User: msfadmin Password: msfadmin [SUCCESS]
 
 ✅ **Credencial encontrada:** `msfadmin:msfadmin`
 
+![Ataque FTP com Medusa](images/img1.png)
+
 O ataque testou 4 usuários × 4 senhas = 16 combinações e encontrou a credencial válida em poucos segundos. O serviço FTP não possui qualquer mecanismo de bloqueio por tentativas falhas.
 
 ---
@@ -183,6 +185,8 @@ Antes de executar o ataque, é necessário identificar os parâmetros do formul�
 - **Status de falha:** HTTP 302 (redirect)
 
 > 💡 A própria página exibe a dica: *"default username is 'admin' with password 'password'"* — um exemplo claro de exposição desnecessária de informações.
+
+![Inspeção do formulário DVWA via DevTools](images/Brute-Force-DVWA.png)
 
 ### Executando o Ataque
 
@@ -214,6 +218,8 @@ O Medusa testou 4 usuários × 4 senhas = 16 combinações e encontrou **12 cred
 | `root` | `qwerty` ✅ |
 
 O DVWA sem proteção não implementa rate limiting, bloqueio de conta ou CAPTCHA — todas as combinações foram testadas sem qualquer obstáculo.
+
+![Medusa simulando combinações de acesso no DVWA](images/Medusa-access-combination.png)
 
 ---
 
@@ -248,6 +254,8 @@ METASPLOITABLE\fax     METASPLOITABLE\voice
 
 > Em um ambiente corporativo real bem configurado, essas informações **nunca deveriam ser acessíveis anonimamente**.
 
+![Enumeração SMB — cenário corporativo mal configurado](images/Simulating-corporate-scenario.png)
+
 ### Etapa 2 — Criando os Arquivos
 
 ```bash
@@ -274,6 +282,8 @@ User: msfadmin Password: msfadmin
 
 ✅ **Credencial encontrada:** `msfadmin:msfadmin` com **acesso administrativo** (`ADMIN$`).
 
+![Criando lista de usuários e password spraying SMB](images/list-users.png)
+
 ### Etapa 4 — Validando o Acesso com SMBClient
 
 ```bash
@@ -293,6 +303,8 @@ smbclient -L //192.168.56.101 -U msfadmin
 | `msfadmin` | Disk | Home Directories |
 
 > ⚠️ O Samba 3.0.20 (2007) é vulnerável ao **CVE-2007-2447**, que permite execução remota de código sem autenticação.
+
+![Validação de acesso com smbclient](images/Access-test-SMBclient.png)
 
 ---
 
