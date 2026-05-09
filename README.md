@@ -5,13 +5,7 @@
 
 ---
 
-## ⚠️ Aviso Legal
 
-> Este projeto foi desenvolvido **exclusivamente para fins educacionais**, em ambiente isolado e controlado (máquinas virtuais sem acesso à internet).  
-> A utilização das técnicas aqui descritas em sistemas sem autorização expressa é **crime** (Lei 12.737/2012 — Lei Carolina Dieckmann).  
-> **Nunca aplique estas técnicas em sistemas reais sem autorização.**
-
----
 
 ## 📋 Índice
 
